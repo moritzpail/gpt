@@ -71,7 +71,7 @@ class FeedForward(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(n_embed_size,4 * n_embed_size),
-            nn.ReLU(),
+            nn.GELU(),
             nn.Linear(4 * n_embed_size, n_embed_size), # Projection layer
             nn.Dropout(dropout_rate)
         )
